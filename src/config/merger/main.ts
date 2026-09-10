@@ -1,3 +1,4 @@
+import { configureInterfaceBinding } from './interface-binding';
 import * as path from '@tauri-apps/api/path';
 import { getSubscriptionConfig } from '../../action/db';
 import { getAllowLan, getClashApiSecret, getCustomRuleSet, getStoreValue, isBypassRouterEnabled, setStoreValue } from '../../single/store';
@@ -75,6 +76,7 @@ export async function setMixedConfig(identifier: string) {
     const bypassRouter = await isBypassRouterEnabled();
     await configureMixedInbound(newConfig, allowLan, bypassRouter);
 
+    await configureInterfaceBinding(newConfig, bypassRouter);
     await updateDHCPSettings2Config(newConfig);
     await updateVPNServerConfigFromDB('config.json', dbConfigData, newConfig);
 
@@ -123,6 +125,7 @@ export async function setGlobalMixedConfig(identifier: string) {
     const bypassRouter = await isBypassRouterEnabled();
     await configureMixedInbound(newConfig, allowLan, bypassRouter);
 
+    await configureInterfaceBinding(newConfig, bypassRouter);
     await updateDHCPSettings2Config(newConfig);
     await updateVPNServerConfigFromDB('config.json', dbConfigData, newConfig);
 

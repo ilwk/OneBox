@@ -1,4 +1,12 @@
 {
+    "interface_binding_template": "跟随模板",
+    "interface_binding_enabled": "开启",
+    "interface_binding_disabled": "关闭",
+    "auto_detect_interface": "自动绑定网卡",
+    "auto_detect_interface_desc": "仅系统代理：关闭后由系统选路，重连生效",
+    "auto_detect_interface_saved": "已保存，重新连接后生效",
+    "auto_detect_interface_load_failed": "读取网卡设置失败，请重新打开此页面",
+    "auto_detect_interface_save_failed": "保存网卡设置失败",
     "about": "关于",
     "add_subscription_failed": "添加配置失败，请粘贴正确的URL或者重启电脑尝试。",
     "add_subscription_success": "添加配置成功",

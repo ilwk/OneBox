@@ -52,6 +52,7 @@ export const THEME_PREF_STORE_KEY = 'theme_pref_key'
 
 // 允许局域网连接
 export const ALLOWLAN_STORE_KEY = 'allow_lan_key'
+export const AUTO_DETECT_INTERFACE_STORE_KEY = 'mixed_auto_detect_interface_key'
 // PROXY_MODE_STORE_KEY 之前的布尔对，只在首次读取时用于推导模式，之后不再读写
 export const ENABLE_TUN_STORE_KEY = 'enable_tun_key'
 export const SKIP_SYSTEM_PROXY_STORE_KEY = 'skip_system_proxy_key'

@@ -70,6 +70,17 @@ macOS 版本已通过 Apple 公证，可直接安装，无需手动绕过系统�
 
 ## 开发说明
 
+也可以使用 Bun（桌面开发仍需 Rust；Windows 还需 MSVC C++ Build Tools 和 Windows SDK）：
+
+```bash
+bun install
+bun run download-binaries
+bun run dev:desktop
+```
+
+`bun run test` 运行前端测试，`bun run build:desktop` 构建桌面应用。
+Bun 入口通过 `src-tauri/tauri.bun.conf.json` 覆盖构建命令；下面的 Deno 流程仍然可用。
+
 安装依赖：
 
 ```bash

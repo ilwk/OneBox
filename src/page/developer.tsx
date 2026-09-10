@@ -6,6 +6,7 @@ import BypassRouterWatchdogSetting from "../components/developer/bypass-router-w
 import { SettingItem } from "../components/developer/common";
 import ToggleDev from "../components/developer/dev-toggle";
 import ToggleDHCP from "../components/developer/dhcp-toggle";
+import AutoDetectInterfaceSetting from "../components/developer/auto-detect-interface";
 import DNSSettingsItem from "../components/developer/dns-settings";
 import HelperPing from "../components/developer/helper-ping";
 import ToggleLocalConfig from "../components/developer/local-config-toggle";
@@ -25,6 +26,7 @@ export default function Page() {
                 <div className="onebox-grouped-card mb-5">
                     <ToggleDev />
                     <ToggleDHCP />
+                    <AutoDetectInterfaceSetting />
                     <ToggleBypassRouter />
                     <BypassRouterWatchdogSetting />
                     <ToggleLocalConfig />

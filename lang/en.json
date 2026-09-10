@@ -1,4 +1,12 @@
 {
+    "interface_binding_template": "Follow template",
+    "interface_binding_enabled": "Enabled",
+    "interface_binding_disabled": "Disabled",
+    "auto_detect_interface": "Automatic interface binding",
+    "auto_detect_interface_desc": "System proxy only: when off, use system routing; reconnect to apply",
+    "auto_detect_interface_saved": "Saved. Reconnect to apply",
+    "auto_detect_interface_load_failed": "Could not load interface setting. Reopen this page",
+    "auto_detect_interface_save_failed": "Could not save interface setting",
     "about": "About",
     "add_subscription_failed": "Add config failed, please paste the correct URL or restart your computer",
     "add_subscription_success": "Add config success",

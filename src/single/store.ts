@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 import { configType, isStageVersion, StageVersionType } from '../config/common';
 import { BUILD_TIME_TEMPLATE_SOURCE } from '../config/templates/generated';
 import { emptyRuleSet, type RuleAction, type RuleSet } from '../config/merger/custom-rules';
-import { ALLOWLAN_STORE_KEY, AUTO_CONNECT_STORE_KEY, DEFAULT_PROXY_PORT, ENABLE_BYPASS_ROUTER_STORE_KEY, ENABLE_TUN_STORE_KEY, PROXY_MODE_STORE_KEY, PROXY_PORT_STORE_KEY, ProxyTransportMode, SHOW_NODE_PROTOCOL_STORE_KEY, SING_BOX_TEMPLATE_VERSION, SKIP_SYSTEM_PROXY_STORE_KEY, STAGE_VERSION_STORE_KEY, USE_DHCP_STORE_KEY, USER_AGENT_STORE_KEY } from '../types/definition';
+import { AUTO_DETECT_INTERFACE_STORE_KEY, ALLOWLAN_STORE_KEY, AUTO_CONNECT_STORE_KEY, DEFAULT_PROXY_PORT, ENABLE_BYPASS_ROUTER_STORE_KEY, ENABLE_TUN_STORE_KEY, PROXY_MODE_STORE_KEY, PROXY_PORT_STORE_KEY, ProxyTransportMode, SHOW_NODE_PROTOCOL_STORE_KEY, SING_BOX_TEMPLATE_VERSION, SKIP_SYSTEM_PROXY_STORE_KEY, STAGE_VERSION_STORE_KEY, USE_DHCP_STORE_KEY, USER_AGENT_STORE_KEY } from '../types/definition';
 import { deriveProxyTransportMode, isProxyTransportMode } from '../utils/proxy-mode';
 
 const OsType = type();
@@ -57,6 +57,17 @@ export async function getStoreValue(key: string, defaultValue?: any): Promise<an
 export async function setStoreValue(key: string, value: any) {
     await store.set(key, value);
     await store.save();
+}
+
+export type InterfaceBindingMode = 'template' | 'enabled' | 'disabled';
+
+export async function getInterfaceBindingMode(): Promise<InterfaceBindingMode> {
+    const value = await getStoreValue(AUTO_DETECT_INTERFACE_STORE_KEY);
+    return value === true ? 'enabled' : value === false ? 'disabled' : 'template';
+}
+
+export async function setInterfaceBindingMode(mode: InterfaceBindingMode): Promise<void> {
+    await setStoreValue(AUTO_DETECT_INTERFACE_STORE_KEY, mode === 'template' ? null : mode === 'enabled');
 }
 
 

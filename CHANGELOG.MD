@@ -8,6 +8,7 @@ All significant changes in this version are documented here.
 
 ### Changes
 
+- Added an automatic interface binding switch for Windows system proxy mode; when disabled, network traffic follows system routing.
 - Added a connect on launch option, and OneBox now starts in the background when launched at login.
 - Combined TUN, system proxy and manual proxy into a single proxy mode setting, with the port alongside it.
 - Updated sing-box version to v1.14.0.
@@ -19,6 +20,7 @@ All significant changes in this version are documented here.
 
 ### 变更
 
+- Windows 系统代理模式新增自动绑定网卡开关，关闭后由系统路由选择网络出口。
 - 更新 JavaScript 与 Rust 依赖。
 - 新增启动后自动连接选项，开机启动时改为在后台启动。
 - TUN、系统代理与手动代理合并为一处「代理模式」设置，端口也在同一处调整。
